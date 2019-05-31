@@ -1,6 +1,6 @@
 # app/controllers/items_controller.rb
 class ItemsController < ApplicationController
-  before_action :set_outfit, only: [:show, :update, :destroy]
+  before_action :set_item, only: [:show, :update, :destroy]
 
   # GET /items
   def index
@@ -16,7 +16,9 @@ class ItemsController < ApplicationController
 
   # GET /items/:id
   def show
-    json_response(@item)
+
+    render json: { item: @item, outfits: @item.outfits }, status: :ok
+  #  json_response(@item)
   end
 
   # PUT /items/:id
@@ -38,7 +40,7 @@ class ItemsController < ApplicationController
     params.permit(:name)
   end
 
-  def set_outfit
+  def set_item
     @item = Item.find(params[:id])
   end
 end

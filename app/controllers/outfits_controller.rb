@@ -15,7 +15,8 @@ class OutfitsController < ApplicationController
 
   # GET /outfits/:id
   def show
-    json_response(@outfit)
+    render json: { outfit: @outfit, items: @outfit.items }, status: :ok
+    # json_response(@outfit)
   end
 
   # PUT /outfits/:id
