@@ -9,7 +9,7 @@ class OutfitsController < ApplicationController
 
   # POST /outfits
   def create
-    @outfit = Outfit.create!(todo_params)
+    @outfit = Outfit.create!(outfit_params)
     json_response(@outfit, :created)
   end
 
@@ -20,7 +20,7 @@ class OutfitsController < ApplicationController
 
   # PUT /outfits/:id
   def update
-    @outfit.update(todo_params)
+    @outfit.update(outfit_params)
     head :no_content
   end
 
@@ -32,9 +32,9 @@ class OutfitsController < ApplicationController
 
   private
 
-  def todo_params
+  def outfit_params
     # whitelist params
-    params.permit(:title, :created_by)
+    params.permit(:title, :created_by, :items)
   end
 
   def set_outfit
