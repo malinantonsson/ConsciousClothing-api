@@ -3,5 +3,12 @@
 #
 # Examples:
 #
+
+#pablo_lledo = BookSupplier.create(company: "Pablo Lledó - ProjectManagement")
+#Book.create(supplier: pablo_lledo)
+
+
+materials = Material.create([{ name: 'Cotton'}, { name: 'Linen' }])
 items = Item.create([{ name: 'Black jeans' }, { name: 'Grey jeans' }])
+
 #   Character.create(name: 'Luke', movie: movies.first)
