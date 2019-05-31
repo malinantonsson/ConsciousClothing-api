@@ -35,7 +35,7 @@ class OutfitsController < ApplicationController
 
   def outfit_params
     # whitelist params
-    params.permit(:title, :created_by, :items)
+    params.permit(:title, :created_by, :items, :description, :worn)
   end
 
   def set_outfit

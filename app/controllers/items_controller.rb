@@ -17,7 +17,7 @@ class ItemsController < ApplicationController
   # GET /items/:id
   def show
 
-    render json: { item: @item, outfits: @item.outfits }, status: :ok
+    render json: { item: @item, outfits: @item.outfits, material: @item.materials }, status: :ok
   #  json_response(@item)
   end
 
@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
 
   def item_params
     # whitelist params
-    params.permit(:name)
+    params.permit(:name, :price)
   end
 
   def set_item
