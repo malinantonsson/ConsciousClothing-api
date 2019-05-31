@@ -28,7 +28,7 @@ RSpec.describe 'Items API', type: :request do
     context 'when the record exists' do
       it 'returns the item' do
         expect(json).not_to be_empty
-        expect(json['id']).to eq(item_id)
+        expect(json['item']['id']).to eq(item_id)
       end
 
       it 'returns status code 200' do
